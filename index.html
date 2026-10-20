@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mirko Errico - Game Producer &amp; QA Lead</title>
+    <meta name="description" content="Portfolio of Mirko Errico, Game Producer and QA Lead at Meangrip Game Studios. Credits include Bye Sweet Carole (Webby Award winner, Annie Awards nominee), Roots in the Sky and Dupin.">
+
+    <!-- TODO quando avrai il dominio: aggiungi <link rel="canonical">, og:url e og:image con URL ASSOLUTI
+         (es. https://tuodominio.com/profilo.jpeg). Senza URL assoluti LinkedIn/WhatsApp non mostrano l'anteprima immagine. -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Mirko Errico - Game Producer &amp; QA Lead">
+    <meta property="og:description" content="Producer and QA Lead credited on Bye Sweet Carole (Webby Award winner), Roots in the Sky and Dupin. Open to roles in Italy and abroad.">
+
+    <link rel="icon" type="image/jpeg" href="profilo.jpeg">
+
+    <style>
+        /* --- LIGHT MODE --- */
+        :root {
+            --color-text-main: #37352f;
+            --color-text-muted: rgba(55, 53, 47, 0.7);
+            --bg-body: #ffffff;
+            --bg-callout-gray: rgba(240, 239, 237, 1);
+            --border-color: rgba(55, 53, 47, 0.12);
+            --bg-bookmark: #fbfbfb;
+            --bg-switcher: rgba(255, 255, 255, 0.9);
+            --accent-color: #2e69ff;
+            --badge-bg: #e3e2e0;
+            --badge-text: #32302c;
+            --platform-badge-bg: rgba(46, 105, 255, 0.1);
+        }
+
+        /* --- DARK MODE (DEFAULT) --- */
+        body.dark-mode {
+            --color-text-main: #f1f1ef;
+            --color-text-muted: rgba(241, 241, 239, 0.7);
+            --bg-body: #191919;
+            --bg-callout-gray: #252525;
+            --border-color: rgba(241, 241, 239, 0.15);
+            --bg-bookmark: #202020;
+            --bg-switcher: rgba(35, 35, 35, 0.9);
+            --accent-color: #58a6ff;
+            --badge-bg: #373737;
+            --badge-text: #e1e1e1;
+            --platform-badge-bg: rgba(88, 166, 255, 0.15);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--color-text-main);
+            line-height: 1.65;
+            background-color: var(--bg-body);
+            max-width: 1400px;
+            width: 90%;
+            margin: 0 auto;
+            padding: 3rem 0;
+            overflow-x: hidden;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* --- BILINGUAL (DEFAULT EN) --- */
+        body.lang-en .it-text { display: none !important; }
+        body.lang-it .en-text { display: none !important; }
+
+        /* --- SWITCHERS --- */
+        .lang-switcher {
+            position: absolute;
+            top: 40px;
+            right: 5%;
+            display: flex;
+            gap: 5px;
+            background: var(--bg-switcher);
+            padding: 4px;
+            border-radius: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 10;
+            border: 1px solid var(--border-color);
+        }
+        .lang-switcher button {
+            background: none;
+            border: none;
+            padding: 6px 14px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            cursor: pointer;
+            border-radius: 20px;
+            color: var(--color-text-muted);
+            transition: all 0.2s;
+        }
+        .lang-switcher button.active {
+            background: var(--color-text-main);
+            color: var(--bg-body);
+        }
+
+        .theme-switcher {
+            position: absolute;
+            top: 40px;
+            right: calc(5% + 110px);
+            background: var(--bg-switcher);
+            padding: 4px;
+            border-radius: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 10;
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .theme-switcher button {
+            background: none;
+            border: none;
+            width: 32px;
+            height: 32px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s;
+            color: var(--color-text-main);
+        }
+        .theme-switcher button:hover { transform: scale(1.1); }
+
+        /* --- HEADER --- */
+        header {
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .header-content { display: flex; align-items: center; gap: 2rem; }
+        .page-header-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: top center;
+            border: 2px solid var(--border-color);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            background: var(--bg-body);
+        }
+        .header-text-container { display: flex; flex-direction: column; justify-content: center; }
+        .page-title {
+            font-size: 2.4rem;
+            font-weight: 700;
+            line-height: 1.2;
+            border: none;
+            padding: 0;
+            margin-bottom: 0.2rem;
+        }
+        .page-subtitle { font-size: 1.15rem; color: var(--color-text-muted); font-weight: 500; }
+
+        .hero-cta {
+            margin-top: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.9rem;
+        }
+        .hero-cta p { margin: 0; text-align: left; font-size: 0.95rem; color: var(--color-text-muted); }
+        .copy-btn { background: none; border: 1px solid var(--border-color); border-radius: 6px; cursor: pointer; font-size: 0.8rem; padding: 1px 7px; color: var(--color-text-main); }
+        .copy-btn:hover { border-color: var(--accent-color); }
+
+        /* --- CV DOWNLOAD --- */
+        .btn-cv-download {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: var(--accent-color);
+            color: #ffffff !important;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-decoration: none !important;
+            box-shadow: 0 4px 12px rgba(46, 105, 255, 0.25);
+            transition: transform 0.2s, background-color 0.2s;
+            width: 100%;
+            text-align: center;
+        }
+        .btn-cv-download:hover { transform: translateY(-2px); opacity: 0.95; }
+
+        /* --- LAYOUT --- */
+        .main-layout { display: flex; gap: 3.5rem; }
+        .sidebar {
+            flex: 0 0 320px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+            position: sticky;
+            top: 2rem;
+            align-self: start;
+        }
+        .main-content { flex: 1; display: flex; flex-direction: column; gap: 2.5rem; min-width: 0; }
+
+        /* --- TYPOGRAPHY --- */
+        h1, h2, h3 { font-weight: 600; margin-bottom: 0.8rem; letter-spacing: -0.01em; }
+        h1 { font-size: 1.85rem; border-bottom: 2px solid var(--border-color); padding-bottom: 0.4rem; }
+        h2 { font-size: 1.4rem; margin-top: 1rem; }
+        h3 { font-size: 1.1rem; }
+        p { margin-bottom: 1rem; text-align: left; }
+        a { color: inherit; text-decoration: underline; }
+        a:hover { color: var(--accent-color); }
+
+        .callout {
+            background: var(--bg-callout-gray);
+            border-radius: 8px;
+            padding: 1.4rem;
+            font-size: 0.92rem;
+            border: 1px solid var(--border-color);
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+        .callout strong { display: inline-block; margin-top: 0.8rem; }
+        .callout strong:first-child { margin-top: 0; }
+
+        .contact-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 0.6rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .contact-list li { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; }
+
+        /* --- BADGES --- */
+        .skills-container { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.5rem; margin-bottom: 1.5rem; }
+        .skill-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            padding: 5px 14px;
+            border-radius: 16px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .skill-badge.highlight { background: var(--accent-color); color: #ffffff; }
+
+        /* --- EXPERIENCE --- */
+        .experience-item { margin-bottom: 1.8rem; padding-left: 1rem; border-left: 3px solid var(--border-color); }
+        .experience-item h3 { margin-bottom: 0.2rem; }
+        .experience-date { font-size: 0.85rem; color: var(--color-text-muted); font-weight: 600; margin-bottom: 0.5rem; }
+        .experience-item ul { margin-left: 1.2rem; margin-top: 0.5rem; margin-bottom: 0.5rem; }
+        .experience-item li { margin-bottom: 0.3rem; }
+
+        /* --- PROJECT GRID --- */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        .portfolio-card {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            background: var(--bg-bookmark);
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+            color: inherit;
+        }
+        .portfolio-card:hover { transform: translateY(-3px); box-shadow: 0 8px 18px rgba(0,0,0,0.12); }
+        .portfolio-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .portfolio-card-body { padding: 1.2rem; display: flex; flex-direction: column; gap: 0.5rem; }
+        .portfolio-card-title { font-weight: 700; font-size: 1.1rem; }
+        .portfolio-card-role {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .platform-tag {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--color-text-muted);
+            background: var(--platform-badge-bg);
+            padding: 3px 8px;
+            border-radius: 4px;
+            width: fit-content;
+            margin-top: 2px;
+        }
+        .portfolio-card-desc { font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.45; }
+        .portfolio-highlights { margin-top: 0.5rem; font-size: 0.8rem; padding-left: 1rem; color: var(--color-text-main); }
+        .portfolio-highlights li { margin-bottom: 0.2rem; }
+
+        .card-img-container-b2b {
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(135deg, #0b1e36 0%, #162d4a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px;
+        }
+        .card-img-container-b2b img {
+            max-width: 130px;
+            max-height: 130px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border: none;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+        }
+
+        .card-stat-badge {
+            display: inline-block;
+            background: rgba(46, 105, 255, 0.1);
+            color: var(--accent-color);
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-top: 6px;
+        }
+
+        .source-note { font-size: 0.78rem; color: var(--color-text-muted); margin-top: 1rem; text-align: left; }
+
+        /* --- MOBILE --- */
+        @media (max-width: 900px) {
+            .lang-switcher { top: 20px; right: 20px; }
+            .theme-switcher { top: 20px; right: 130px; }
+            .main-layout { flex-direction: column; gap: 2.5rem; }
+            .sidebar { flex: 1; width: 100%; position: static; }
+            .header-content { flex-direction: column; text-align: center; gap: 1rem; }
+            .header-text-container { align-items: center; }
+            .hero-cta { justify-content: center; text-align: center; }
+            .page-title { font-size: 1.8rem; text-align: center; }
+            .page-subtitle { text-align: center; }
+        }
+    </style>
+</head>
+<body class="lang-en dark-mode">
+
+    <!-- THEME SWITCH -->
+    <div class="theme-switcher">
+        <button id="theme-btn" onclick="toggleTheme()" aria-label="Toggle light/dark theme">☀️</button>
+    </div>
+
+    <!-- LANGUAGE SWITCH -->
+    <div class="lang-switcher">
+        <button id="btn-en" class="active" onclick="changeLanguage('en')">EN</button>
+        <button id="btn-it" onclick="changeLanguage('it')">IT</button>
+    </div>
+
+    <!-- ==================== HEADER ==================== -->
+    <header>
+        <div class="header-content">
+            <img class="page-header-icon" src="profilo.jpeg" alt="Mirko Errico"/>
+            <div class="header-text-container">
+                <h1 class="page-title">Mirko Errico</h1>
+                <p class="page-subtitle">Game Producer &amp; QA Lead | Meangrip Game Studios</p>
+
+                <div class="hero-cta">
+                    <p class="en-text">Open to Producer, Project Manager and QA Lead roles. Italy or abroad, ready to relocate.</p>
+                    <p class="it-text">Disponibile per ruoli da Producer, Project Manager e QA Lead. Italia o estero, pronto al trasferimento.</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== MAIN LAYOUT ==================== -->
+    <div class="main-layout">
+
+        <!-- ==================== SIDEBAR ==================== -->
+        <aside class="sidebar">
+
+            <a href="Mirko_Errico_CV.pdf" class="btn-cv-download" target="_blank" rel="noopener">
+                <span class="en-text">Open CV (PDF)</span><span class="it-text">Apri il CV (PDF)</span>
+            </a>
+
+            <!-- INFO (EN) -->
+            <div class="callout en-text">
+                <strong>Roles</strong><br/>
+                Producer / Project Manager<br/>
+                QA Lead<br/><br/>
+
+                <strong>Current Studio</strong><br/>
+                Meangrip Game Studios (since 01/2024)<br/><br/>
+
+                <strong>Location &amp; Availability</strong><br/>
+                Naples, Italy<br/>
+                On-site / Hybrid / Remote<br/>
+                Willing to relocate<br/><br/>
+
+                <strong>Platforms &amp; Certification</strong><br/>
+                Nintendo Switch (Lotcheck / TRC), Steam, GOG, itch.io, Google Play<br/><br/>
+
+                <strong>Languages</strong><br/>
+                Italian (Native)<br/>
+                English (Professional working proficiency)
+            </div>
+
+            <!-- INFO (IT) -->
+            <div class="callout it-text">
+                <strong>Ruoli</strong><br/>
+                Producer / Project Manager<br/>
+                QA Lead<br/><br/>
+
+                <strong>Studio attuale</strong><br/>
+                Meangrip Game Studios (da 01/2024)<br/><br/>
+
+                <strong>Sede &amp; Disponibilità</strong><br/>
+                Napoli, Italia<br/>
+                In presenza / Ibrido / Remoto<br/>
+                Disponibile al trasferimento<br/><br/>
+
+                <strong>Piattaforme &amp; Certificazione</strong><br/>
+                Nintendo Switch (Lotcheck / TRC), Steam, GOG, itch.io, Google Play<br/><br/>
+
+                <strong>Lingue</strong><br/>
+                Italiano (Madrelingua)<br/>
+                Inglese (Livello lavorativo)
+            </div>
+
+            <!-- CONTACTS -->
+            <div class="callout">
+                <strong><span class="en-text">CONTACTS &amp; LINKS</span><span class="it-text">CONTATTI &amp; LINK</span></strong>
+                <ul class="contact-list">
+                    <li><a href="mailto:mirkoerrico27@gmail.com">mirkoerrico27@gmail.com</a> <button type="button" class="copy-btn" onclick="copyEmail(this)" aria-label="Copy email address" title="Copy email">Copy</button></li>
+                    <li><a href="https://www.linkedin.com/in/mirkoerrico/" target="_blank" rel="noopener">LinkedIn</a></li>
+                    <li><a href="https://www.meangrip.com/" target="_blank" rel="noopener">Meangrip Game Studios</a></li>
+                </ul>
+            </div>
+
+        </aside>
+
+        <!-- ==================== MAIN CONTENT ==================== -->
+        <main class="main-content">
+
+            <!-- ABOUT -->
+            <section>
+                <h1 class="en-text">About Me</h1>
+                <h1 class="it-text">Chi Sono</h1>
+
+                <div class="en-text">
+                    <p>Before games I worked in kitchens and restaurants, as a cook and a waiter. It taught me to stay calm when everything lands at once and to take the situation in hand to get through it. People kept telling me I had a leader's temperament, and when I started my game development course my teacher noticed the same thing and pointed me toward producing and project management.</p>
+
+                    <p>Today I am a <strong>Game Producer and QA Lead</strong> at Meangrip Game Studios in Naples. I have worked on <strong>Bye Sweet Carole</strong> (Webby Award winner, Annie Awards nominee, published by Maximum Entertainment), <strong>Roots in the Sky - The Hand of Glory 2</strong> and <strong>Dupin - The Bloodstained Mystery</strong>, plus a mobile narrative game for ANM. My job, in short: solving problems, sometimes in unconventional ways, as long as they work.</p>
+                </div>
+
+                <div class="it-text">
+                    <p>Prima dei videogiochi ho lavorato in cucina e in sala, come cuoco e cameriere. Mi ha insegnato a restare lucido quando tutto arriva insieme e a prendere in mano la situazione per uscirne nel modo migliore. Mi è sempre stato detto che avevo un carattere da leader e, quando ho iniziato il corso di sviluppo videoludico, se n'è accorto anche il mio professore, che mi ha indirizzato verso la produzione e il project management.</p>
+
+                    <p>Oggi sono <strong>Game Producer e QA Lead</strong> presso Meangrip Game Studios a Napoli. Ho lavorato a <strong>Bye Sweet Carole</strong> (vincitore di un Webby Award, candidato agli Annie Awards, pubblicato da Maximum Entertainment), <strong>Roots in the Sky - The Hand of Glory 2</strong> e <strong>Dupin - The Bloodstained Mystery</strong>, oltre a un gioco narrativo mobile per ANM. Il mio lavoro, in breve: risolvere problemi, a volte in modo non convenzionale, purché funzioni.</p>
+                </div>
+            </section>
+
+            <!-- GAMES -->
+            <section>
+                <h2 class="en-text">Games I Worked On</h2>
+                <h2 class="it-text">Videogiochi su cui ho lavorato</h2>
+
+                <div class="portfolio-grid">
+
+                    <!-- BYE SWEET CAROLE -->
+                    <a href="https://store.steampowered.com/app/2428980/Bye_Sweet_Carole/" class="portfolio-card" target="_blank" rel="noopener">
+                        <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2428980/capsule_616x353.jpg" alt="Bye Sweet Carole" loading="lazy"/>
+                        <div class="portfolio-card-body">
+                            <span class="portfolio-card-role">Junior Producer &amp; Lead Tester</span>
+                            <div class="portfolio-card-title">Bye Sweet Carole</div>
+                            <div class="platform-tag">PC | NINTENDO SWITCH | PS5 | XBOX SERIES X|S</div>
+                            <div class="portfolio-card-desc en-text">Hand-drawn horror-fantasy adventure created by Chris Darril. Developed by Little Sewing Machine with Meangrip Game Studios and Dreams Uncorporated, published by Maximum Entertainment. Released October 2025.</div>
+                            <div class="portfolio-card-desc it-text">Avventura horror-fantasy disegnata a mano, creata da Chris Darril. Sviluppata da Little Sewing Machine con Meangrip Game Studios e Dreams Uncorporated, pubblicata da Maximum Entertainment. Uscita a ottobre 2025.</div>
+
+                            <ul class="portfolio-highlights en-text">
+                                <li>Managed the development team: tasks assigned per person and tracked toward milestones.</li>
+                            </ul>
+                            <ul class="portfolio-highlights it-text">
+                                <li>Gestione del team di sviluppo: task assegnati per singola persona e monitorati verso le milestone.</li>
+                            </ul>
+
+                            <span class="card-stat-badge">Webby Award Winner 2026 (Games, Independent Creator)</span>
+                            <span class="card-stat-badge">Annie Awards Nominee (Character Animation in a Video Game)</span>
+                            <div class="portfolio-card-desc en-text">Also: Italian Video Game Awards 2026 winner (Outstanding Art, Outstanding Audio), Gamescom Award nominee (Best Visuals), 6 NAVGTR nominations. Over 100,000 copies sold in the first two months.</div>
+                            <div class="portfolio-card-desc it-text">Inoltre: vincitore agli Italian Video Game Awards 2026 (Outstanding Art, Outstanding Audio), candidato al Gamescom Award (Best Visuals), 6 nomination NAVGTR. Oltre 100.000 copie vendute nei primi due mesi.</div>
+                        </div>
+                    </a>
+
+                    <!-- ROOTS IN THE SKY -->
+                    <a href="https://store.steampowered.com/app/2062380/Roots_in_the_Sky__The_Hand_of_Glory_2/" class="portfolio-card" target="_blank" rel="noopener">
+                        <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2062380/capsule_616x353.jpg" alt="Roots in the Sky - The Hand of Glory 2" loading="lazy"/>
+                        <div class="portfolio-card-body">
+                            <span class="portfolio-card-role">Lead Tester</span>
+                            <div class="portfolio-card-title">Roots in the Sky - The Hand of Glory 2</div>
+                            <div class="platform-tag">PC | NINTENDO SWITCH</div>
+                            <div class="portfolio-card-desc en-text">Point-and-click mystery adventure across Rome, Jordan, India and Japan. By Madit Entertainment and Daring Touch. Released August 2026 on PC, also available on Nintendo Switch.</div>
+                            <div class="portfolio-card-desc it-text">Avventura grafica investigativa tra Roma, Giordania, India e Giappone. Di Madit Entertainment e Daring Touch. Uscita ad agosto 2026 su PC, disponibile anche su Nintendo Switch.</div>
+
+                            <ul class="portfolio-highlights en-text">
+                                <li>Led QA: test plan execution and bug tracking through to release.</li>
+                                <li>Verified puzzle logic and narrative progression across 50+ locations.</li>
+                                <li>Took the Switch version through Nintendo Lotcheck: fixed each reported issue and resubmitted until approval.</li>
+                            </ul>
+                            <ul class="portfolio-highlights it-text">
+                                <li>Guida del QA: esecuzione dei test plan e bug tracking fino al rilascio.</li>
+                                <li>Verifica della logica degli enigmi e della progressione narrativa in oltre 50 location.</li>
+                                <li>Versione Switch portata attraverso il Lotcheck Nintendo: correzione di ogni problema segnalato e nuova submission fino all'approvazione.</li>
+                            </ul>
+
+                            <span class="card-stat-badge">Released Aug 2026 | 97% positive on Steam</span>
+                        </div>
+                    </a>
+
+                    <!-- DUPIN -->
+                    <a href="https://meangrip.itch.io/dupin" class="portfolio-card" target="_blank" rel="noopener">
+                        <img src="foto-sfondo.jpeg" alt="Dupin - The Bloodstained Mystery" style="background-color:#ffffff;" loading="lazy"/>
+                        <div class="portfolio-card-body">
+                            <span class="portfolio-card-role">QA Lead &amp; Tester</span>
+                            <div class="portfolio-card-title">Dupin - The Bloodstained Mystery</div>
+                            <div class="platform-tag">PC | ITCH.IO</div>
+                            <div class="portfolio-card-desc en-text">Murder mystery set in Paris, inspired by the tales of Edgar Allan Poe. Published by Meangrip in April 2026.</div>
+                            <div class="portfolio-card-desc it-text">Murder mystery ambientato a Parigi, ispirato ai racconti di Edgar Allan Poe. Pubblicato da Meangrip ad aprile 2026.</div>
+
+                            <ul class="portfolio-highlights en-text">
+                                <li>Led QA on the investigation mechanics and crime scene sequences.</li>
+                                <li>Tested branching dialogue logic and prepared the release build.</li>
+                            </ul>
+                            <ul class="portfolio-highlights it-text">
+                                <li>Guida del QA su meccaniche investigative e scene del crimine.</li>
+                                <li>Test della logica dei dialoghi a scelta e preparazione della build di rilascio.</li>
+                            </ul>
+
+                            <span class="card-stat-badge">Released Apr 2026 | Poe-inspired narrative</span>
+                        </div>
+                    </a>
+
+                </div>
+                <p class="source-note en-text">Awards and sales figures refer to the game as a whole and its development team, as reported publicly.</p>
+                <p class="source-note it-text">Premi e dati di vendita si riferiscono al gioco e al suo team di sviluppo nel complesso, come riportato pubblicamente.</p>
+            </section>
+
+            <!-- STACK -->
+            <section>
+                <h2 class="en-text">Production &amp; QA Stack</h2>
+                <h2 class="it-text">Production &amp; QA Stack</h2>
+
+                <div class="callout">
+                    <div class="en-text">
+                        <strong>Project Management &amp; Bug Tracking:</strong><br/>
+                        Jira, Trello, Notion.<br/><br/>
+
+                        <strong>Methodologies:</strong><br/>
+                        Agile, Scrum, Milestone Management, Risk Assessment.<br/><br/>
+
+                        <strong>Storefronts &amp; Certification:</strong><br/>
+                        Nintendo Switch (Lotcheck / TRC), Steamworks, GOG, itch.io, Google Play Console.
+                    </div>
+                    <div class="it-text">
+                        <strong>Project Management &amp; Bug Tracking:</strong><br/>
+                        Jira, Trello, Notion.<br/><br/>
+
+                        <strong>Metodologie:</strong><br/>
+                        Agile, Scrum, Milestone Management, Risk Assessment.<br/><br/>
+
+                        <strong>Storefront &amp; Certificazione:</strong><br/>
+                        Nintendo Switch (Lotcheck / TRC), Steamworks, GOG, itch.io, Google Play Console.
+                    </div>
+                </div>
+
+                <div class="skills-container" style="margin-top: 1rem;">
+                    <span class="skill-badge highlight">Production &amp; Team Coordination</span>
+                    <span class="skill-badge highlight">QA Lead &amp; Bug Tracking</span>
+                    <span class="skill-badge highlight">Nintendo Switch Lotcheck</span>
+                    <span class="skill-badge">Jira &amp; Trello</span>
+                    <span class="skill-badge">Agile &amp; Scrum</span>
+                    <span class="skill-badge">Steamworks &amp; PC Stores</span>
+                    <span class="skill-badge">Google Play Console</span>
+                    <span class="skill-badge">Mobile QA (Android)</span>
+                </div>
+            </section>
+
+            <!-- EXPERIENCE -->
+            <section>
+                <h2 class="en-text">Work Experience</h2>
+                <h2 class="it-text">Esperienza Professionale</h2>
+
+                <div class="experience-item">
+                    <h3>Junior Producer / Lead Tester</h3>
+                    <div class="experience-date">Meangrip Game Studios | Naples, Italy | 01/2024 - Present</div>
+                    <div class="en-text">
+                        Coordinating development teams, QA workflows and releases across commercial games and a mobile game for a public transport company. Handling build readiness and store submissions on <strong>Nintendo Switch</strong>, <strong>Steam</strong>, <strong>GOG</strong>, <strong>itch.io</strong> and <strong>Google Play</strong>.
+                        <ul>
+                            <li><strong>Bye Sweet Carole</strong> (Junior Producer &amp; Lead Tester): multi-platform release on PC, Switch, PS5 and Xbox Series X|S with publisher Maximum Entertainment.</li>
+                            <li><strong>Roots in the Sky - The Hand of Glory 2</strong> (Lead Tester): QA lead through to the August 2026 release (PC and Switch).</li>
+                            <li><strong>Dupin - The Bloodstained Mystery</strong> (QA Lead &amp; Tester): QA and release for the April 2026 launch.</li>
+                            <li><strong>ANM &amp; Core</strong> (QA Lead &amp; Production Support): mobile narrative adventure for Azienda Napoletana Mobilità, on Google Play and the App Store.</li>
+                        </ul>
+                    </div>
+                    <div class="it-text">
+                        Coordinamento dei team di sviluppo, dei flussi QA e dei rilasci per videogiochi commerciali e un gioco mobile per un'azienda di trasporto pubblico. Gestione della preparazione build e delle submission su <strong>Nintendo Switch</strong>, <strong>Steam</strong>, <strong>GOG</strong>, <strong>itch.io</strong> e <strong>Google Play</strong>.
+                        <ul>
+                            <li><strong>Bye Sweet Carole</strong> (Junior Producer &amp; Lead Tester): rilascio multipiattaforma su PC, Switch, PS5 e Xbox Series X|S con il publisher Maximum Entertainment.</li>
+                            <li><strong>Roots in the Sky - The Hand of Glory 2</strong> (Lead Tester): guida del QA fino al rilascio di agosto 2026 (PC e Switch).</li>
+                            <li><strong>Dupin - The Bloodstained Mystery</strong> (QA Lead &amp; Tester): QA e rilascio per il lancio di aprile 2026.</li>
+                            <li><strong>ANM &amp; Core</strong> (QA Lead &amp; Production Support): avventura narrativa mobile per l'Azienda Napoletana Mobilità, su Google Play e App Store.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Speaker &amp; Panelist</h3>
+                    <div class="experience-date">COMICON, IGDA Campania &amp; Industry Events</div>
+                    <div class="en-text">
+                        Guest speaker and panelist on video game production, indie development workflows, QA and publishing, including talks at COMICON and IGDA Campania activities.
+                    </div>
+                    <div class="it-text">
+                        Ospite e relatore su produzione di videogiochi, sviluppo indie, QA e publishing, tra cui interventi al COMICON e ad attività dell'IGDA Campania.
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <h3 class="en-text">Education</h3>
+                    <h3 class="it-text">Formazione</h3>
+                    <div class="experience-date">ISAS International School of Art &amp; Sciences | 2023</div>
+                    <div class="en-text">Cross-disciplinary game development course covering the full development pipeline.</div>
+                    <div class="it-text">Corso trasversale sullo sviluppo di videogiochi, che copre l'intera pipeline di sviluppo.</div>
+                </div>
+            </section>
+
+            <!-- B2B -->
+            <section>
+                <h2 class="en-text">Mobile Project</h2>
+                <h2 class="it-text">Progetto Mobile</h2>
+
+                <div class="portfolio-grid">
+
+                    <a href="https://play.google.com/store/apps/details?id=it.anm.ANMeCore&amp;hl=it" class="portfolio-card" target="_blank" rel="noopener">
+                        <div class="card-img-container-b2b">
+                            <img src="anmecore.png" alt="ANM &amp; Core logo" loading="lazy"/>
+                        </div>
+                        <div class="portfolio-card-body">
+                            <span class="portfolio-card-role">QA Lead &amp; Production Support</span>
+                            <div class="portfolio-card-title">ANM &amp; Core</div>
+                            <div class="platform-tag">ANDROID | IOS | GOOGLE PLAY | APP STORE</div>
+                            <div class="portfolio-card-desc en-text">Mobile narrative adventure set in Naples during Comicon weekend, made for ANM (Azienda Napoletana Mobilità). Player choices shape dialogue and endings, with an urban treasure hunt using QR codes that rewards smart use of public transport.</div>
+                            <div class="portfolio-card-desc it-text">Avventura narrativa mobile ambientata a Napoli nel weekend del Comicon, realizzata per ANM (Azienda Napoletana Mobilità). Le scelte del giocatore cambiano dialoghi e finali, con una caccia al tesoro urbana a base di QR code che premia l'uso intelligente dei mezzi pubblici.</div>
+
+                            <ul class="portfolio-highlights en-text">
+                                <li>Led QA: user flow verification and regression testing on Android devices.</li>
+                                <li>Supported release and submission on Google Play Console.</li>
+                            </ul>
+                            <ul class="portfolio-highlights it-text">
+                                <li>Guida del QA: verifica degli user flow e test di regressione su dispositivi Android.</li>
+                                <li>Supporto a release e submission su Google Play Console.</li>
+                            </ul>
+
+                            <span class="card-stat-badge">Client project for ANM | Android &amp; iOS</span>
+                        </div>
+                    </a>
+
+                </div>
+                <p class="source-note">
+                    <a href="https://play.google.com/store/apps/details?id=it.anm.ANMeCore&amp;hl=en_US" target="_blank" rel="noopener">Google Play</a>
+                    &nbsp;|&nbsp;
+                    <a href="https://apps.apple.com/it/app/anm-core/id6759283843" target="_blank" rel="noopener">App Store</a>
+                </p>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        function changeLanguage(lang) {
+            var isIt = lang === 'it';
+            document.body.classList.toggle('lang-it', isIt);
+            document.body.classList.toggle('lang-en', !isIt);
+            document.getElementById('btn-it').classList.toggle('active', isIt);
+            document.getElementById('btn-en').classList.toggle('active', !isIt);
+            document.documentElement.lang = isIt ? 'it' : 'en';
+        }
+
+        function copyEmail(btn) {
+            var email = 'mirkoerrico27@gmail.com';
+            var done = function () {
+                btn.textContent = 'Copied';
+                setTimeout(function () { btn.textContent = 'Copy'; }, 1500);
+            };
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(email).then(done, function () { window.prompt('Copy:', email); });
+            } else {
+                window.prompt('Copy:', email);
+            }
+        }
+
+        function toggleTheme() {
+            var body = document.body;
+            var themeBtn = document.getElementById('theme-btn');
+            var dark = body.classList.toggle('dark-mode');
+            themeBtn.textContent = dark ? '☀️' : '🌙';
+        }
+    </script>
+</body>
+</html>
